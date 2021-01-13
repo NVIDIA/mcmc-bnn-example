@@ -1,0 +1,8 @@
+# ignore the default executable and input files
+a.out
+returns_and_features*.tar.gz
+._returns_and_features*.txt
+returns_and_features*.txt
+
+# Ignore backup files
+*~
