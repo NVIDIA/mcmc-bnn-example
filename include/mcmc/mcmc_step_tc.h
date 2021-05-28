@@ -597,6 +597,7 @@ __device__ void leapfrog_step_single(
 template <typename T>
 DI void sync_and_swap(int* workspace, T*& grad_prev, T*& grad_cur, T*& grad_next) {
   int delta = blockIdx.x == 0 ? int(gridDim.x) - 1 : -1;
+  __syncthreads();
   if (threadIdx.x == 0) {
     atomicAdd(workspace, delta);
     __threadfence();
